@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <title>compas_wood - Examples</title>
+  
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <meta name="author" content="Petras Vestartas" />
+  <meta name="description" content="" />
+
+  <link rel="shortcut icon" href="_static/images/compas.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+  <link rel="stylesheet" type="text/css" href="_static/css/compas.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/compas-reference.css" />
+
+  
+  <link rel="next" title="compas_wood package import" href="examples/test__compas_wood.html" />
+  
+
+  
+  <link rel="prev" title="Tutorial" href="tutorial.html" />
+  
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body data-spy="scroll" data-target="#compas-toc">
+  <!-- header -->
+  <header id="header" class="compas-header d-flex align-items-center">
+    <nav class="navbar navbar-expand navbar-dark col flex-column flex-md-row text-center">
+      <!-- brand -->
+      <a class="navbar-brand" href="https://ibois-epfl.github.io/compas_wood/">
+        <img src="_static/images/compas_icon_white.png" alt="compas_wood" width="48px" height="48px" />
+      </a>
+      <!-- brand -->
+      <!-- primary -->
+      <ul class="navbar-nav">
+        <li class="nav-item active"><a class="nav-link" href="https://ibois-epfl.github.io/compas_wood/">compas_wood</a></li>
+      </ul>
+      <!-- primary -->
+      <ul class="navbar-nav d-none d-md-flex ml-md-auto">
+        <!-- version -->
+        
+        <meta id="doc_versions" data-url="https://ibois-epfl.github.io/compas_wood/doc_versions.txt" data-docs="https://ibois-epfl.github.io/compas_wood/">
+        <li class="nav-item nav-versions dropdown">
+          <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            0.1.1
+          </a>
+          <div id="doc_version_list" class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions"></div>
+        </li>
+        
+        <!-- version -->
+        <!-- social -->
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/ibois-epfl/compas_wood" target="_blank">
+            <span class="fab fa-github fa-1x"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://forum.compas-framework.org" target="_blank">
+            <span class="fab fa-discourse fa-1x"></span>
+          </a>
+        </li>
+        <!-- social -->
+      </ul>
+    </nav>
+  </header>
+  <!-- header -->
+  <!-- main -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- main -->
+      <main class="col-12 col-md-9 col-xl-7 px-2 px-md-5 pt-2 pb-5 compas-content" role="main">
+        
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-3 bg-white px-0">
+            <li class="breadcrumb-item"><a href="index.html">docs</a></li>
+            
+            <li class="breadcrumb-item active" aria-current="page">Examples</li>
+          </ol>
+        </nav>
+        
+
+        
+        
+        <section id="examples">
+<h1>Examples</h1>
+<p>Examples follows the below data-set with a detailed example of the source-code:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/test__compas_wood.html">compas_wood package import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/test_closed_mesh_from_polylines.html">closed_mesh_from_polylines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/test_get_connection_zones_ss_0.html">get_connection_zones ss_0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/test_get_connection_zones_ss_24.html">get_connection_zones ss_24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/test_joints.html">joints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/test_rtree.html">rtree</a></li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<section id="inputs-and-outputs-of-the-data-set">
+<h2>Inputs and outputs of the data-set:</h2>
+<ul class="simple">
+<li><p>src/compas_wood/data/joinery_solver_data_set.py</p></li>
+</ul>
+<section id="data-set-annen-polylines">
+<h3>Data-set: annen_polylines</h3>
+<a class="reference internal image-reference" href="_images/annen_polylines.jpg"><img alt="_images/annen_polylines.jpg" src="_images/annen_polylines.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-0">
+<h3>Data-set: c_0</h3>
+<a class="reference internal image-reference" href="_images/c_0.jpg"><img alt="_images/c_0.jpg" src="_images/c_0.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-1">
+<h3>Data-set: c_1</h3>
+<a class="reference internal image-reference" href="_images/c_1.jpg"><img alt="_images/c_1.jpg" src="_images/c_1.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-2">
+<h3>Data-set: c_2</h3>
+<a class="reference internal image-reference" href="_images/c_2.jpg"><img alt="_images/c_2.jpg" src="_images/c_2.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-3">
+<h3>Data-set: c_3</h3>
+<a class="reference internal image-reference" href="_images/c_3.jpg"><img alt="_images/c_3.jpg" src="_images/c_3.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-4">
+<h3>Data-set: c_4</h3>
+<a class="reference internal image-reference" href="_images/c_4.jpg"><img alt="_images/c_4.jpg" src="_images/c_4.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-5">
+<h3>Data-set: c_5</h3>
+<a class="reference internal image-reference" href="_images/c_5.jpg"><img alt="_images/c_5.jpg" src="_images/c_5.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-6">
+<h3>Data-set: c_6</h3>
+<a class="reference internal image-reference" href="_images/c_6.jpg"><img alt="_images/c_6.jpg" src="_images/c_6.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-7">
+<h3>Data-set: c_7</h3>
+<a class="reference internal image-reference" href="_images/c_7.jpg"><img alt="_images/c_7.jpg" src="_images/c_7.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-8">
+<h3>Data-set: c_8</h3>
+<a class="reference internal image-reference" href="_images/c_8.jpg"><img alt="_images/c_8.jpg" src="_images/c_8.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-9">
+<h3>Data-set: c_9</h3>
+<a class="reference internal image-reference" href="_images/c_9.jpg"><img alt="_images/c_9.jpg" src="_images/c_9.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-10">
+<h3>Data-set: c_10</h3>
+<a class="reference internal image-reference" href="_images/c_10.jpg"><img alt="_images/c_10.jpg" src="_images/c_10.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-11">
+<h3>Data-set: c_11</h3>
+<a class="reference internal image-reference" href="_images/c_11.jpg"><img alt="_images/c_11.jpg" src="_images/c_11.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-12">
+<h3>Data-set: c_12</h3>
+<a class="reference internal image-reference" href="_images/c_12.jpg"><img alt="_images/c_12.jpg" src="_images/c_12.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-13">
+<h3>Data-set: c_13</h3>
+<a class="reference internal image-reference" href="_images/c_13.jpg"><img alt="_images/c_13.jpg" src="_images/c_13.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-14">
+<h3>Data-set: c_14</h3>
+<a class="reference internal image-reference" href="_images/c_14.jpg"><img alt="_images/c_14.jpg" src="_images/c_14.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-15">
+<h3>Data-set: c_15</h3>
+<a class="reference internal image-reference" href="_images/c_15.jpg"><img alt="_images/c_15.jpg" src="_images/c_15.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-c-16">
+<h3>Data-set: c_16</h3>
+<a class="reference internal image-reference" href="_images/c_16.jpg"><img alt="_images/c_16.jpg" src="_images/c_16.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-0">
+<h3>Data-set: ss_0</h3>
+<a class="reference internal image-reference" href="_images/ss_0.jpg"><img alt="_images/ss_0.jpg" src="_images/ss_0.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-1">
+<h3>Data-set: ss_1</h3>
+<a class="reference internal image-reference" href="_images/ss_1.jpg"><img alt="_images/ss_1.jpg" src="_images/ss_1.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-2">
+<h3>Data-set: ss_2</h3>
+<a class="reference internal image-reference" href="_images/ss_2.jpg"><img alt="_images/ss_2.jpg" src="_images/ss_2.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-3">
+<h3>Data-set: ss_3</h3>
+<a class="reference internal image-reference" href="_images/ss_3.jpg"><img alt="_images/ss_3.jpg" src="_images/ss_3.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-4">
+<h3>Data-set: ss_4</h3>
+<a class="reference internal image-reference" href="_images/ss_4.jpg"><img alt="_images/ss_4.jpg" src="_images/ss_4.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-5">
+<h3>Data-set: ss_5</h3>
+<a class="reference internal image-reference" href="_images/ss_5.jpg"><img alt="_images/ss_5.jpg" src="_images/ss_5.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-6">
+<h3>Data-set: ss_6</h3>
+<a class="reference internal image-reference" href="_images/ss_6.jpg"><img alt="_images/ss_6.jpg" src="_images/ss_6.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-7">
+<h3>Data-set: ss_7</h3>
+<a class="reference internal image-reference" href="_images/ss_7.jpg"><img alt="_images/ss_7.jpg" src="_images/ss_7.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-8">
+<h3>Data-set: ss_8</h3>
+<a class="reference internal image-reference" href="_images/ss_8.jpg"><img alt="_images/ss_8.jpg" src="_images/ss_8.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-9">
+<h3>Data-set: ss_9</h3>
+<a class="reference internal image-reference" href="_images/ss_9.jpg"><img alt="_images/ss_9.jpg" src="_images/ss_9.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-10">
+<h3>Data-set: ss_10</h3>
+<a class="reference internal image-reference" href="_images/ss_10.jpg"><img alt="_images/ss_10.jpg" src="_images/ss_10.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-11">
+<h3>Data-set: ss_11</h3>
+<a class="reference internal image-reference" href="_images/ss_11.jpg"><img alt="_images/ss_11.jpg" src="_images/ss_11.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-12">
+<h3>Data-set: ss_12</h3>
+<a class="reference internal image-reference" href="_images/ss_12.jpg"><img alt="_images/ss_12.jpg" src="_images/ss_12.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-13">
+<h3>Data-set: ss_13</h3>
+<a class="reference internal image-reference" href="_images/ss_13.jpg"><img alt="_images/ss_13.jpg" src="_images/ss_13.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-14">
+<h3>Data-set: ss_14</h3>
+<a class="reference internal image-reference" href="_images/ss_14.jpg"><img alt="_images/ss_14.jpg" src="_images/ss_14.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-15">
+<h3>Data-set: ss_15</h3>
+<a class="reference internal image-reference" href="_images/ss_15.jpg"><img alt="_images/ss_15.jpg" src="_images/ss_15.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-16">
+<h3>Data-set: ss_16</h3>
+<a class="reference internal image-reference" href="_images/ss_16.jpg"><img alt="_images/ss_16.jpg" src="_images/ss_16.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-17">
+<h3>Data-set: ss_17</h3>
+<a class="reference internal image-reference" href="_images/ss_17.jpg"><img alt="_images/ss_17.jpg" src="_images/ss_17.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-18">
+<h3>Data-set: ss_18</h3>
+<a class="reference internal image-reference" href="_images/ss_18.jpg"><img alt="_images/ss_18.jpg" src="_images/ss_18.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-19">
+<h3>Data-set: ss_19</h3>
+<a class="reference internal image-reference" href="_images/ss_19.jpg"><img alt="_images/ss_19.jpg" src="_images/ss_19.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-20">
+<h3>Data-set: ss_20</h3>
+<a class="reference internal image-reference" href="_images/ss_20.jpg"><img alt="_images/ss_20.jpg" src="_images/ss_20.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-21">
+<h3>Data-set: ss_21</h3>
+<a class="reference internal image-reference" href="_images/ss_21.jpg"><img alt="_images/ss_21.jpg" src="_images/ss_21.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-22">
+<h3>Data-set: ss_22</h3>
+<a class="reference internal image-reference" href="_images/ss_22.jpg"><img alt="_images/ss_22.jpg" src="_images/ss_22.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-23">
+<h3>Data-set: ss_23</h3>
+<a class="reference internal image-reference" href="_images/ss_23.jpg"><img alt="_images/ss_23.jpg" src="_images/ss_23.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-24">
+<h3>Data-set: ss_24</h3>
+<a class="reference internal image-reference" href="_images/ss_24.jpg"><img alt="_images/ss_24.jpg" src="_images/ss_24.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-25">
+<h3>Data-set: ss_25</h3>
+<a class="reference internal image-reference" href="_images/ss_25.jpg"><img alt="_images/ss_25.jpg" src="_images/ss_25.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ss-26">
+<h3>Data-set: ss_26</h3>
+<a class="reference internal image-reference" href="_images/ss_26.jpg"><img alt="_images/ss_26.jpg" src="_images/ss_26.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ts-0">
+<h3>Data-set: ts_0</h3>
+<a class="reference internal image-reference" href="_images/ts_0.jpg"><img alt="_images/ts_0.jpg" src="_images/ts_0.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ts-1">
+<h3>Data-set: ts_1</h3>
+<a class="reference internal image-reference" href="_images/ts_1.jpg"><img alt="_images/ts_1.jpg" src="_images/ts_1.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ts-2">
+<h3>Data-set: ts_2</h3>
+<a class="reference internal image-reference" href="_images/ts_2.jpg"><img alt="_images/ts_2.jpg" src="_images/ts_2.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ts-3">
+<h3>Data-set: ts_3</h3>
+<a class="reference internal image-reference" href="_images/ts_3.jpg"><img alt="_images/ts_3.jpg" src="_images/ts_3.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ts-4">
+<h3>Data-set: ts_4</h3>
+<a class="reference internal image-reference" href="_images/ts_4.jpg"><img alt="_images/ts_4.jpg" src="_images/ts_4.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ts-5">
+<h3>Data-set: ts_5</h3>
+<a class="reference internal image-reference" href="_images/ts_5.jpg"><img alt="_images/ts_5.jpg" src="_images/ts_5.jpg" style="width: 800px;" /></a>
+</section>
+<section id="data-set-ts-6">
+<h3>Data-set: ts_6</h3>
+<a class="reference internal image-reference" href="_images/ts_6.jpg"><img alt="_images/ts_6.jpg" src="_images/ts_6.jpg" style="width: 800px;" /></a>
+</section>
+</section>
+</section>
+
+        
+      </main>
+      <!-- content -->
+      <!-- sidebar -->
+      <div class="col-12 col-md-3 compas-sidebar" role="navigation">
+        <form id="search" class="d-flex align-items-center compas-searchbox" action="search.html" method="get">
+          <input class="form-control" type="text" name="q" placeholder="Search docs" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+          <button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#compas-navigation" aria-controls="compas-navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </form>
+        
+        
+        <div id="compas-navigation" class="collapse compas-navigation">
+          <ul class="nav flex-column active">
+<li class="nav-item"><a class="nav-link reference internal" href="index.html">Introduction</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="installation.html">Installation</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="nav-item active"><a class="nav-link active current reference internal" href="#">Examples</a><ul class="nav flex-column">
+<li class="nav-item"><a class="nav-link reference internal" href="examples/test__compas_wood.html">compas_wood package import</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="examples/test_closed_mesh_from_polylines.html">closed_mesh_from_polylines</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="examples/test_get_connection_zones_ss_0.html">get_connection_zones ss_0</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="examples/test_get_connection_zones_ss_24.html">get_connection_zones ss_24</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="examples/test_joints.html">joints</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="examples/test_rtree.html">rtree</a></li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link reference internal" href="api.html">API Reference</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="license.html">License</a></li>
+</ul>
+
+        </div>
+        
+      </div>
+      <!-- sidebar -->
+      <!-- toc -->
+      <div class="d-none d-xl-block col-xl-2 compas-toc" role="toc">
+        
+        <ul class="nav flex-column" id="compas-toc">
+<li class="nav-item"><a class="nav-link reference internal" href="#">Examples</a><ul class="nav flex-column">
+<li class="nav-item"><a class="nav-link reference internal" href="#inputs-and-outputs-of-the-data-set">Inputs and outputs of the data-set:</a><ul class="nav flex-column">
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-annen-polylines">Data-set: annen_polylines</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-0">Data-set: c_0</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-1">Data-set: c_1</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-2">Data-set: c_2</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-3">Data-set: c_3</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-4">Data-set: c_4</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-5">Data-set: c_5</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-6">Data-set: c_6</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-7">Data-set: c_7</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-8">Data-set: c_8</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-9">Data-set: c_9</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-10">Data-set: c_10</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-11">Data-set: c_11</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-12">Data-set: c_12</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-13">Data-set: c_13</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-14">Data-set: c_14</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-15">Data-set: c_15</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-c-16">Data-set: c_16</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-0">Data-set: ss_0</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-1">Data-set: ss_1</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-2">Data-set: ss_2</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-3">Data-set: ss_3</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-4">Data-set: ss_4</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-5">Data-set: ss_5</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-6">Data-set: ss_6</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-7">Data-set: ss_7</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-8">Data-set: ss_8</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-9">Data-set: ss_9</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-10">Data-set: ss_10</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-11">Data-set: ss_11</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-12">Data-set: ss_12</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-13">Data-set: ss_13</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-14">Data-set: ss_14</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-15">Data-set: ss_15</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-16">Data-set: ss_16</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-17">Data-set: ss_17</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-18">Data-set: ss_18</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-19">Data-set: ss_19</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-20">Data-set: ss_20</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-21">Data-set: ss_21</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-22">Data-set: ss_22</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-23">Data-set: ss_23</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-24">Data-set: ss_24</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-25">Data-set: ss_25</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ss-26">Data-set: ss_26</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ts-0">Data-set: ts_0</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ts-1">Data-set: ts_1</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ts-2">Data-set: ts_2</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ts-3">Data-set: ts_3</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ts-4">Data-set: ts_4</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ts-5">Data-set: ts_5</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#data-set-ts-6">Data-set: ts_6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      <!-- toc -->
+    </div>
+  </div>
+  <!-- main -->
+  <!-- footer -->
+  <footer class="compas-footer">
+    <nav class="nav p-2">
+      
+      <a href="tutorial.html" title="Tutorial" class="nav-link footer-link float-start text-left d-flex w-50" rel="prev">
+        <div class="nav-button p-2 m-2"><i class="fas fa-arrow-left"></i></div>
+        <div class="nav-title flex-grow-1 align-self-center">
+          <div class="nav-direction small font-weight-light">Previous</div>
+          Tutorial
+        </div>
+      </a>
+      
+
+      
+      <a href="examples/test__compas_wood.html" title="compas_wood package import" class="nav-link footer-link float-end text-right d-flex w-50" rel="next">
+        <div class="nav-title footer-link flex-grow-1 align-self-center">
+          <div class="nav-direction small font-weight-light">Next</div>
+          compas_wood package import
+        </div>
+        <div class="nav-button p-2 m-2"><i class="fas fa-arrow-right"></i></div>
+      </a>
+      
+    </nav>
+  </footer>
+  <!-- footer -->
+  <!-- below -->
+  <div class="below py-5" style="background-color: #222;">
+    <div class="container">
+      <div class="row flex-column">
+        <div class="col-12 col-md-6 mx-md-auto text-center">
+          <h4 class="pb-3 below-text">COMPAS</h4>
+          <p class="below-text">
+            A computational framework for collaboration and research
+            in Architecture, Engineering, Fabrication, and Construction.
+          </p>
+          <nav class="nav justify-content-center pb-3">
+            <a class="nav-link mx-2 px-0 below-link" href="http://github.com/compas-dev" target="_blank">
+              <span class="fab fa-github fa-1x"></span>
+            </a>
+            <a class="nav-link mx-2 px-0 below-link" href="http://forum.compas-framework.org" target="_blank">
+              <span class="fab fa-discourse fa-1x"></span>
+            </a>
+            <a class="nav-link mx-2 px-0 below-link" href="https://pypi.org/project/COMPAS/" target="_blank">
+              <span class="fab fa-python fa-1x"></span>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <p class="p-0 m-0 below-text">Copyright &copy; 2017-2021 compas-dev</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- below -->
+  <!-- scripts -->
+  <!-- <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT: '',
+      VERSION: '0.1.1',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE: 'false',
+      SOURCELINK_SUFFIX: '.txt'
+    };
+  </script> -->
+
+  <script id="documentation_options" data-url_root="" src="_static/documentation_options.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.0.0/anchor.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+
+  <script src="_static/underscore.js"></script>
+  <script src="_static/doctools.js"></script>
+  <script src="_static/searchtools.js"></script>
+  <script src="_static/language_data.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".language-default code").addClass("python");
+      $(".language-python code").addClass("python");
+      $(".language-bash code").addClass("bash");
+      $(".language-cpp code").addClass("cpp");
+      $(".language-json code").addClass("json");
+      $(".language-none code").addClass("plaintext");
+
+      hljs.initHighlighting();
+      anchors.add();
+
+    });
+
+
+    var url = $("#doc_versions").data("url");
+    var docs_site = $("#doc_versions").data("docs");
+
+    if (url) {
+      $.get(url, res => {
+        var lines = res.match(/[^\r\n]+/g);
+        lines.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+        lines.reverse();
+        lines.forEach(version => {
+          $("#doc_version_list").append("<a class=\"dropdown-item\" href=\"" + docs_site + version + "\">" + version + "</a>");
+        });
+
+        var selected_version = $('.nav-versions .dropdown-item').filter(function (i, ver) {
+          return window.location.href.startsWith(ver.href);
+        });
+        selected_version.addClass('active');
+        $("#bd-versions").text(selected_version.text());
+
+      })
+    }
+  </script>
+  <!-- scripts -->
+  
+  
+</body>
+
+</html>
