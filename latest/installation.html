@@ -20,11 +20,11 @@
   <link rel="stylesheet" type="text/css" href="_static/css/compas-reference.css" />
 
   
-  <link rel="next" title="Tutorial" href="tutorial.html" />
+  <link rel="next" title="Examples" href="examples.html" />
   
 
   
-  <link rel="prev" title="compas_wood" href="index.html" />
+  <link rel="prev" title="Table of Contents" href="index.html" />
   
 
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -91,6 +91,26 @@
         
         <section id="installation">
 <h1>Installation</h1>
+<section id="windows">
+<h2>Windows</h2>
+<div class="language-python notranslate"><div class="highlight"><pre><button class="btn copy"><i class="far fa-copy"></i></button><code><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">wood</span><span class="o">-</span><span class="n">dev</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8</span> <span class="n">mpir</span> <span class="n">mpfr</span> <span class="n">boost</span><span class="o">-</span><span class="n">cpp</span> <span class="n">eigen</span><span class="o">=</span><span class="mf">3.3</span> <span class="n">cgal</span><span class="o">-</span><span class="n">cpp</span><span class="o">=</span><span class="mf">5.2</span> <span class="n">pybind11</span> <span class="n">compas</span> <span class="n">compas_view2</span> <span class="o">--</span><span class="n">yes</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">wood</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">petrasvestartas</span><span class="o">/</span><span class="n">compas_wood</span>
+<span class="n">cd</span> <span class="n">compas_wood</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</code></pre></div>
+</div>
+</section>
+<section id="mac">
+<h2>Mac</h2>
+<div class="language-python notranslate"><div class="highlight"><pre><button class="btn copy"><i class="far fa-copy"></i></button><code><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">wood</span><span class="o">-</span><span class="n">dev</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8</span> <span class="n">gmp</span> <span class="n">mpfr</span> <span class="n">boost</span><span class="o">-</span><span class="n">cpp</span> <span class="n">eigen</span><span class="o">=</span><span class="mf">3.3</span> <span class="n">cgal</span><span class="o">-</span><span class="n">cpp</span><span class="o">=</span><span class="mf">5.2</span> <span class="n">pybind11</span> <span class="n">compas</span> <span class="n">compas_view2</span> <span class="o">--</span><span class="n">yes</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">wood</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">petrasvestartas</span><span class="o">/</span><span class="n">compas_wood</span>
+<span class="n">cd</span> <span class="n">compas_wood</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span>
+</code></pre></div>
+</div>
+</section>
 </section>
 
         
@@ -112,10 +132,10 @@
           <ul class="nav flex-column active">
 <li class="nav-item"><a class="nav-link reference internal" href="index.html">Introduction</a></li>
 <li class="nav-item active"><a class="nav-link active current reference internal" href="#">Installation</a></li>
-<li class="nav-item"><a class="nav-link reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="examples.html">Examples</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="api.html">API Reference</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="license.html">License</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="citation.html">Citation</a></li>
 </ul>
 
         </div>
@@ -126,7 +146,11 @@
       <div class="d-none d-xl-block col-xl-2 compas-toc" role="toc">
         
         <ul class="nav flex-column" id="compas-toc">
-<li class="nav-item"><a class="nav-link reference internal" href="#">Installation</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#">Installation</a><ul class="nav flex-column">
+<li class="nav-item"><a class="nav-link reference internal" href="#windows">Windows</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#mac">Mac</a></li>
+</ul>
+</li>
 </ul>
 
       </div>
@@ -138,20 +162,20 @@
   <footer class="compas-footer">
     <nav class="nav p-2">
       
-      <a href="index.html" title="compas_wood" class="nav-link footer-link float-start text-left d-flex w-50" rel="prev">
+      <a href="index.html" title="Table of Contents" class="nav-link footer-link float-start text-left d-flex w-50" rel="prev">
         <div class="nav-button p-2 m-2"><i class="fas fa-arrow-left"></i></div>
         <div class="nav-title flex-grow-1 align-self-center">
           <div class="nav-direction small font-weight-light">Previous</div>
-          compas_wood
+          Table of Contents
         </div>
       </a>
       
 
       
-      <a href="tutorial.html" title="Tutorial" class="nav-link footer-link float-end text-right d-flex w-50" rel="next">
+      <a href="examples.html" title="Examples" class="nav-link footer-link float-end text-right d-flex w-50" rel="next">
         <div class="nav-title footer-link flex-grow-1 align-self-center">
           <div class="nav-direction small font-weight-light">Next</div>
-          Tutorial
+          Examples
         </div>
         <div class="nav-button p-2 m-2"><i class="fas fa-arrow-right"></i></div>
       </a>
