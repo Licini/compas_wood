@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <title>compas_wood - beam_volumes</title>
+  
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <meta name="author" content="Petras Vestartas" />
+  <meta name="description" content="" />
+
+  <link rel="shortcut icon" href="../../_static/images/compas.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+  <link rel="stylesheet" type="text/css" href="../../_static/css/compas.css" />
+  <link rel="stylesheet" type="text/css" href="../../_static/css/compas-reference.css" />
+
+  
+  <link rel="next" title="License" href="../../license.html" />
+  
+
+  
+  <link rel="prev" title="closest_polylines" href="compas_wood.joinery.closest_polylines.html" />
+  
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body data-spy="scroll" data-target="#compas-toc">
+  <!-- header -->
+  <header id="header" class="compas-header d-flex align-items-center">
+    <nav class="navbar navbar-expand navbar-dark col flex-column flex-md-row text-center">
+      <!-- brand -->
+      <a class="navbar-brand" href="https://ibois-epfl.github.io/compas_wood/">
+        <img src="../../_static/images/compas_icon_white.png" alt="compas_wood" width="48px" height="48px" />
+      </a>
+      <!-- brand -->
+      <!-- primary -->
+      <ul class="navbar-nav">
+        <li class="nav-item active"><a class="nav-link" href="https://ibois-epfl.github.io/compas_wood/">compas_wood</a></li>
+      </ul>
+      <!-- primary -->
+      <ul class="navbar-nav d-none d-md-flex ml-md-auto">
+        <!-- version -->
+        
+        <meta id="doc_versions" data-url="https://ibois_epfl.github.io/compas-wood/doc_versions.txt" data-docs="https://ibois-epfl.github.io/compas_wood/">
+        <li class="nav-item nav-versions dropdown">
+          <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            0.1.1
+          </a>
+          <div id="doc_version_list" class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions"></div>
+        </li>
+        
+        <!-- version -->
+        <!-- social -->
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/ibois-epfl/compas_wood" target="_blank">
+            <span class="fab fa-github fa-1x"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://forum.compas-framework.org" target="_blank">
+            <span class="fab fa-discourse fa-1x"></span>
+          </a>
+        </li>
+        <!-- social -->
+      </ul>
+    </nav>
+  </header>
+  <!-- header -->
+  <!-- main -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- main -->
+      <main class="col-12 col-md-9 col-xl-7 px-2 px-md-5 pt-2 pb-5 compas-content" role="main">
+        
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-3 bg-white px-0">
+            <li class="breadcrumb-item"><a href="../../index.html">docs</a></li>
+            
+            <li class="breadcrumb-item"><a href="../../api.html">API Reference</a></li>
+            
+            <li class="breadcrumb-item"><a href="../compas_wood.html">compas_wood</a></li>
+            
+            <li class="breadcrumb-item active" aria-current="page">beam_volumes</li>
+          </ol>
+        </nav>
+        
+
+        
+        
+        <section class="detail" id="beam-volumes">
+<h1>beam_volumes</h1>
+<dl class="function">
+<dt id="compas_wood.joinery.beam_volumes">
+<code class="sig-prename descclassname">compas_wood.joinery.</code><code class="sig-name descname">beam_volumes</code><span class="sig-paren">(</span><em class="sig-param">polylines</em>, <em class="sig-param">segment_radii</em>, <em class="sig-param">segment_normals</em>, <em class="sig-param">allowed_types</em>, <em class="sig-param">min_distance</em>, <em class="sig-param">volume_length</em>, <em class="sig-param">cross_or_side_to_end</em>, <em class="sig-param">flip_male</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/ibois-epfl/compas_wood/blob/master/src/compas_wood/joinery.py#L632"><span class="viewcode-link">[source]</span></a></dt>
+<dd><p>Find closest polylines within given distance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>polylines</strong> (<em>list of polylines</em>)</p></li>
+<li><p><strong>segment_radii</strong> (<em>radius per each polyline segment, used to construct boxes around segments</em>)</p></li>
+<li><p><strong>segment_vectors</strong> (<em>radius per each polyline segment, used to construct boxes around segments</em>)</p></li>
+<li><p><strong>allowed_types</strong> (<em>-1 - all possible types, 0 - end-to-end, 1 - cross or side-to-end, this option is needed because multiple joint can be made in one intersection</em>)</p></li>
+<li><p><strong>min_distance</strong> (<em>double distance until which search is valid</em>)</p></li>
+<li><p><strong>volume_length</strong> (<em>double length of beam volumes</em>)</p></li>
+<li><p><strong>cross_or_side_to_end</strong> (<em>double type0_type1_parameter_00_05</em>)</p></li>
+<li><p><strong>flip_male</strong> (<em>property for side-to-end volumes, 0 - no shift, -1 shift to right, 1 shift to left</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>neighbours_list</em> – List of element indices of polyline0_id_segment0_id_polyline1_id_segment1_id</p></li>
+<li><p><em>pair_points_list</em> – a list of 2 points</p></li>
+<li><p><em>pair_volumes_list</em> – a list of 4 polyline</p></li>
+<li><p><em>joint_areas_list</em> – a list of closed polylines within local connection detection</p></li>
+<li><p><em>joint_types_list</em> – a list of integers of joint area types</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+        
+      </main>
+      <!-- content -->
+      <!-- sidebar -->
+      <div class="col-12 col-md-3 compas-sidebar" role="navigation">
+        <form id="search" class="d-flex align-items-center compas-searchbox" action="../../search.html" method="get">
+          <input class="form-control" type="text" name="q" placeholder="Search docs" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+          <button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#compas-navigation" aria-controls="compas-navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </form>
+        
+        
+        <div id="compas-navigation" class="collapse compas-navigation">
+          <ul class="nav flex-column active">
+<li class="nav-item"><a class="nav-link reference internal" href="../../index.html">Introduction</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../../description.html">Description</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../../installation.html">Installation</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../../examples.html">Examples</a></li>
+<li class="nav-item active"><a class="nav-link reference internal" href="../../api.html">API Reference</a><ul class="nav flex-column active">
+<li class="nav-item active"><a class="nav-link reference internal" href="../compas_wood.html">compas_wood</a><ul class="nav flex-column active">
+<li class="nav-item"><a class="nav-link reference internal" href="compas_wood.joinery.test.html">test</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="compas_wood.joinery.rtree.html">rtree</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="compas_wood.joinery.joints.html">joints</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="compas_wood.joinery.get_connection_zones.html">get_connection_zones</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="compas_wood.joinery.closed_mesh_from_polylines.html">closed_mesh_from_polylines</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="compas_wood.joinery.closest_polylines.html">closest_polylines</a></li>
+<li class="nav-item active"><a class="nav-link active current reference internal" href="#">beam_volumes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link reference internal" href="../../license.html">License</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="../../citation.html">Citation</a></li>
+</ul>
+
+        </div>
+        
+      </div>
+      <!-- sidebar -->
+      <!-- toc -->
+      <div class="d-none d-xl-block col-xl-2 compas-toc" role="toc">
+        
+        <ul class="nav flex-column" id="compas-toc">
+<li class="nav-item"><a class="nav-link reference internal" href="#">beam_volumes</a></li>
+</ul>
+
+      </div>
+      <!-- toc -->
+    </div>
+  </div>
+  <!-- main -->
+  <!-- footer -->
+  <footer class="compas-footer">
+    <nav class="nav p-2">
+      
+      <a href="compas_wood.joinery.closest_polylines.html" title="closest_polylines" class="nav-link footer-link float-start text-left d-flex w-50" rel="prev">
+        <div class="nav-button p-2 m-2"><i class="fas fa-arrow-left"></i></div>
+        <div class="nav-title flex-grow-1 align-self-center">
+          <div class="nav-direction small font-weight-light">Previous</div>
+          closest_polylines
+        </div>
+      </a>
+      
+
+      
+      <a href="../../license.html" title="License" class="nav-link footer-link float-end text-right d-flex w-50" rel="next">
+        <div class="nav-title footer-link flex-grow-1 align-self-center">
+          <div class="nav-direction small font-weight-light">Next</div>
+          License
+        </div>
+        <div class="nav-button p-2 m-2"><i class="fas fa-arrow-right"></i></div>
+      </a>
+      
+    </nav>
+  </footer>
+  <!-- footer -->
+  <!-- below -->
+  <div class="below py-5" style="background-color: #222;">
+    <div class="container">
+      <div class="row flex-column">
+        <div class="col-12 col-md-6 mx-md-auto text-center">
+          <h4 class="pb-3 below-text">COMPAS</h4>
+          <p class="below-text">
+            A computational framework for collaboration and research
+            in Architecture, Engineering, Fabrication, and Construction.
+          </p>
+          <nav class="nav justify-content-center pb-3">
+            <a class="nav-link mx-2 px-0 below-link" href="http://github.com/compas-dev" target="_blank">
+              <span class="fab fa-github fa-1x"></span>
+            </a>
+            <a class="nav-link mx-2 px-0 below-link" href="http://forum.compas-framework.org" target="_blank">
+              <span class="fab fa-discourse fa-1x"></span>
+            </a>
+            <a class="nav-link mx-2 px-0 below-link" href="https://pypi.org/project/COMPAS/" target="_blank">
+              <span class="fab fa-python fa-1x"></span>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <p class="p-0 m-0 below-text">Copyright &copy; 2017-2021 compas-dev</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- below -->
+  <!-- scripts -->
+  <!-- <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT: '',
+      VERSION: '0.1.1',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE: 'false',
+      SOURCELINK_SUFFIX: '.txt'
+    };
+  </script> -->
+
+  <script id="documentation_options" data-url_root="" src="../../_static/documentation_options.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.0.0/anchor.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+
+  <script src="../../_static/underscore.js"></script>
+  <script src="../../_static/doctools.js"></script>
+  <script src="../../_static/searchtools.js"></script>
+  <script src="../../_static/language_data.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".language-default code").addClass("python");
+      $(".language-python code").addClass("python");
+      $(".language-bash code").addClass("bash");
+      $(".language-cpp code").addClass("cpp");
+      $(".language-json code").addClass("json");
+      $(".language-none code").addClass("plaintext");
+
+      hljs.initHighlighting();
+      anchors.add();
+
+      new ClipboardJS('.btn', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+    });
+
+
+    var url = $("#doc_versions").data("url");
+    var docs_site = $("#doc_versions").data("docs");
+
+    if (url) {
+      $.get(url, res => {
+        var lines = res.match(/[^\r\n]+/g);
+        lines.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+        lines.reverse();
+        lines.forEach(version => {
+          $("#doc_version_list").append("<a class=\"dropdown-item\" href=\"" + docs_site + version + "\">" + version + "</a>");
+        });
+
+        var selected_version = $('.nav-versions .dropdown-item').filter(function (i, ver) {
+          return window.location.href.startsWith(ver.href);
+        });
+        selected_version.addClass('active');
+        $("#bd-versions").text(selected_version.text());
+
+      })
+    }
+  </script>
+  <!-- scripts -->
+  
+  
+</body>
+
+</html>
