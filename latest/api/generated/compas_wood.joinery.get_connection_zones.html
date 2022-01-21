@@ -97,7 +97,7 @@
 <h1>get_connection_zones</h1>
 <dl class="function">
 <dt id="compas_wood.joinery.get_connection_zones">
-<code class="sig-prename descclassname">compas_wood.joinery.</code><code class="sig-name descname">get_connection_zones</code><span class="sig-paren">(</span><em class="sig-param">polylines_vertices_XYZ</em>, <em class="sig-param">face_vectors_XYZ=None</em>, <em class="sig-param">face_joints_types_int=None</em>, <em class="sig-param">three_valance_element_indices_and_instruction=None</em>, <em class="sig-param">default_joint_parameters=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/ibois-epfl/compas_wood/blob/master/src/compas_wood/joinery.py#L31"><span class="viewcode-link">[source]</span></a></dt>
+<code class="sig-prename descclassname">compas_wood.joinery.</code><code class="sig-name descname">get_connection_zones</code><span class="sig-paren">(</span><em class="sig-param">polylines_vertices_XYZ</em>, <em class="sig-param">face_vectors_XYZ=None</em>, <em class="sig-param">face_joints_types_int=None</em>, <em class="sig-param">three_valance_element_indices_and_instruction=None</em>, <em class="sig-param">default_joint_parameters=None</em>, <em class="sig-param">search_type=2</em>, <em class="sig-param">division_distance=300</em>, <em class="sig-param">shift=0.6</em>, <em class="sig-param">output_type=4</em>, <em class="sig-param">triangulate=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/ibois-epfl/compas_wood/blob/master/src/compas_wood/joinery.py#L31"><span class="viewcode-link">[source]</span></a></dt>
 <dd><p>Compute joinery</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -106,6 +106,11 @@
 <li><p><strong>face_vectors_XYZ</strong> (<em>vectors to orient a joint</em>)</p></li>
 <li><p><strong>face_joints_types_int</strong> (<em>joint id, existing in the code</em>)</p></li>
 <li><p><strong>three_valance_element_indices_and_instruction</strong> (<em>special case e.g. alignment of rectangles</em>)</p></li>
+<li><p><strong>search_type</strong> (<em>0 - face-to-face, 1 - plane-to-face (cross), 2 - all</em>)</p></li>
+<li><p><strong>division_distance</strong> (<em>division parameter if tile allows this</em>)</p></li>
+<li><p><strong>shift</strong> (<em>distance value if tile allows this</em>)</p></li>
+<li><p><strong>output_type</strong> (<em>0 - top outlines and one joint_area, 1 - top outlines and two joint lines, 2 - top outlines and joint volumes first and third, 3 - top outlines and joint polylines, 4 - get_joints_geometry_as_closed_polylines_performing_intersection</em>)</p></li>
+<li><p><strong>triangulate</strong> (<em>0 - not output as mesh, 1 - output as mesh, currently not supported in python</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -141,8 +146,10 @@
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="../../examples/test_1_compas_wood.html">1_compas_wood</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="../../examples/test_2_rtree.html">2_rtree</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="../../examples/test_3_joints.html">3_joints</a></li>
+<li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="../../examples/test_4_get_connection_zones_c_0.html">4_get_connection_zones c_0</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="../../examples/test_4_get_connection_zones_ss_0.html">4_get_connection_zones ss_0</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="../../examples/test_4_get_connection_zones_ss_24.html">4_get_connection_zones ss_24</a></li>
+<li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="../../examples/test_4_get_connection_zones_ts_3.html">4_get_connection_zones ts_3</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="../../examples/test_5_closed_mesh_from_polylines.html">5_closed_mesh_from_polylines</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="../../examples/test_6_closest_polylines.html">6_closest_polylines</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="../../examples/test_7_beam_volumes.html">7_beam_volumes</a></li>
