@@ -140,9 +140,9 @@
 
 <span class="k">def</span> <span class="nf">test_beam_volumes</span><span class="p">():</span>
 
-    <span class="n">polylines</span> <span class="o">=</span> <span class="n">data_set_beams</span><span class="o">.</span><span class="n">polylines_3</span><span class="p">()</span>
-    <span class="n">segment_radii</span> <span class="o">=</span> <span class="n">data_set_beams</span><span class="o">.</span><span class="n">polylines_radii_3</span><span class="p">()</span>
-    <span class="n">segment_normals</span> <span class="o">=</span> <span class="n">data_set_beams</span><span class="o">.</span><span class="n">polylines_vector_3</span><span class="p">()</span>
+    <span class="n">polylines</span> <span class="o">=</span> <span class="n">data_set_beams</span><span class="o">.</span><span class="n">polylines_4</span><span class="p">()</span>
+    <span class="n">segment_radii</span> <span class="o">=</span> <span class="n">data_set_beams</span><span class="o">.</span><span class="n">polylines_radii_4</span><span class="p">()</span>
+    <span class="n">segment_normals</span> <span class="o">=</span> <span class="n">data_set_beams</span><span class="o">.</span><span class="n">polylines_vector_4</span><span class="p">()</span>
 
     <span class="c1"># print(segment_normals)</span>
 
@@ -168,8 +168,9 @@
         <span class="n">volume_pairs</span><span class="p">,</span>
         <span class="n">joint_areas_list</span><span class="p">,</span>
         <span class="n">joint_types_list</span><span class="p">,</span>
+        <span class="n">joint_geometry_list</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">=</span> <span class="n">beam_volumes</span><span class="p">(</span>
-        <span class="n">polylines</span><span class="p">,</span> <span class="n">segment_radii</span><span class="p">,</span> <span class="n">segment_normals</span><span class="p">,</span> <span class="n">allowed_types</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mi">1</span>
+        <span class="n">polylines</span><span class="p">,</span> <span class="n">segment_radii</span><span class="p">,</span> <span class="n">segment_normals</span><span class="p">,</span> <span class="n">allowed_types</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">None</span>
     <span class="p">)</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    # Display normals</span>
@@ -200,7 +201,15 @@
 
     <span class="n">volume_pairs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">polylines</span><span class="p">)</span>
     <span class="n">display</span><span class="p">(</span>
-        <span class="n">volume_pairs</span><span class="p">,</span> <span class="n">joint_areas_list</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">joint_types_list</span>
+        <span class="n">joint_geometry_list</span><span class="p">,</span>
+        <span class="n">joint_areas_list</span><span class="p">,</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="mf">0.01</span><span class="p">,</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="kc">False</span><span class="p">,</span>
+        <span class="n">joint_types_list</span><span class="p">,</span>
     <span class="p">)</span>
 
 

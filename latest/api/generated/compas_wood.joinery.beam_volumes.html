@@ -97,7 +97,7 @@
 <h1>beam_volumes</h1>
 <dl class="function">
 <dt id="compas_wood.joinery.beam_volumes">
-<code class="sig-prename descclassname">compas_wood.joinery.</code><code class="sig-name descname">beam_volumes</code><span class="sig-paren">(</span><em class="sig-param">polylines</em>, <em class="sig-param">segment_radii</em>, <em class="sig-param">segment_normals</em>, <em class="sig-param">allowed_types</em>, <em class="sig-param">min_distance</em>, <em class="sig-param">volume_length</em>, <em class="sig-param">cross_or_side_to_end</em>, <em class="sig-param">flip_male</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/ibois-epfl/compas_wood/blob/master/src/compas_wood/joinery.py#L636"><span class="viewcode-link">[source]</span></a></dt>
+<code class="sig-prename descclassname">compas_wood.joinery.</code><code class="sig-name descname">beam_volumes</code><span class="sig-paren">(</span><em class="sig-param">polylines</em>, <em class="sig-param">segment_radii</em>, <em class="sig-param">segment_normals</em>, <em class="sig-param">allowed_types</em>, <em class="sig-param">min_distance</em>, <em class="sig-param">volume_length</em>, <em class="sig-param">cross_or_side_to_end</em>, <em class="sig-param">flip_male</em>, <em class="sig-param">joint_parameters</em>, <em class="sig-param">compute_joints=True</em>, <em class="sig-param">division_distance=300</em>, <em class="sig-param">shift=0.6</em>, <em class="sig-param">output_type=3</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/ibois-epfl/compas_wood/blob/master/src/compas_wood/joinery.py#L638"><span class="viewcode-link">[source]</span></a></dt>
 <dd><p>Find closest polylines within given distance</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -110,6 +110,10 @@
 <li><p><strong>volume_length</strong> (<em>double length of beam volumes</em>)</p></li>
 <li><p><strong>cross_or_side_to_end</strong> (<em>double type0_type1_parameter_00_05</em>)</p></li>
 <li><p><strong>flip_male</strong> (<em>property for side-to-end volumes, 0 - no shift, -1 shift to right, 1 shift to left</em>)</p></li>
+<li><p><strong>joint_parameters_list</strong> (<em>division distance, shift, type - 1000, 0.5, 1, 1000, 0.5, 10, 1000, 0.5, 20, 1000, 0.5, 30, 1000, 0.5, 40, 1000, 0.5, 50,</em>)</p></li>
+<li><p><strong>compute_joints</strong> (<em>true or false</em>)</p></li>
+<li><p><strong>shift</strong> (<em>parameter of a joint</em>)</p></li>
+<li><p><strong>output type</strong> (<em>0 - 1 - 2 -3</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -119,6 +123,7 @@
 <li><p><em>pair_volumes_list</em> – a list of 4 polyline</p></li>
 <li><p><em>joint_areas_list</em> – a list of closed polylines within local connection detection</p></li>
 <li><p><em>joint_types_list</em> – a list of integers of joint area types</p></li>
+<li><p><em>joint_geometry</em> – oriented joint geometry if joints are computed</p></li>
 </ul>
 </p>
 </dd>
