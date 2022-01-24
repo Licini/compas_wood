@@ -91,35 +91,285 @@
         
         <section id="description">
 <h1>Description</h1>
-<section id="algorithm-structure">
-<h2>Algorithm Structure</h2>
+<section id="scope-pair-wise-connections">
+<h2>Scope - Pair-wise Connections</h2>
 <figure class="figure align-default">
 <img alt="_images/Slide1.jpg" class="figure-img img-fluid" src="_images/Slide1.jpg" />
 </figure>
+</section>
+<section id="algorithm-structure">
+<h2>Algorithm Structure</h2>
 <figure class="figure align-default">
 <img alt="_images/Slide8.jpg" class="figure-img img-fluid" src="_images/Slide8.jpg" />
 </figure>
 </section>
+<section id="joint-types">
+<h2>Joint Types</h2>
+<dl>
+<dt>Joint parameters are given in a list following this order:</dt><dd><ul>
+<li><p>side-to-side parallel in-plane |  side-to-side parallel | side-to-side out-of-plane |  top-to-side | cross | top-to-top |  side-to-side non-parallel</p></li>
+<li><div class="line-block">
+<div class="line">division length | shift | type |</div>
+</div>
+</li>
+<li><p>{ 1000, 0.5, 1,  1000, 0.5, 10 ,  1000, 0.5, 20 ,  1000, 0.5, 30 ,  1000, 0.5, 40 ,  1000, 0.5, 50 }</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Joints in the Joint Library:</strong></p>
+<table class="colwidths-auto table table-bordered docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Types_0</p></th>
+<th class="head"><p>Types_1-9</p></th>
+<th class="head"><p>Types_10-19</p></th>
+<th class="head"><p>Types_20-29</p></th>
+<th class="head"><p>Types_30-39</p></th>
+<th class="head"><p>Types_40-49</p></th>
+<th class="head"><p>Types_50-59</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>skip</strong></p></td>
+<td><p><strong>side-to-side</strong></p></td>
+<td><p><strong>side-to-side</strong></p></td>
+<td><p><strong>top-to-side</strong></p></td>
+<td><p><strong>cross</strong></p></td>
+<td><p><strong>top-to-top</strong></p></td>
+<td><p><strong>side-to-side</strong></p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><strong>in-plane</strong></p></td>
+<td><p><strong>out-of-plane</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p><strong>rotated</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>default ss_e_ip_1</p></td>
+<td><p>default ss_e_op_1</p></td>
+<td><p>default ts_e_p_3</p></td>
+<td><p>default cr_c_ip_0</p></td>
+<td><p>default</p></td>
+<td><p>default</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>1 - (ss_e_ip_1)</p></td>
+<td><p>10 - (ss_e_op_1)</p></td>
+<td><p>20 - (ts_e_p_1)</p></td>
+<td><p>30 - (cr_c_ip_0)</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>2 - (ss_e_ip_0)</p></td>
+<td><p>11 - (ss_e_op_2)</p></td>
+<td><p>21 - (ts_e_p_2)</p></td>
+<td><p>31 - (cr_c_ip_1)</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>12 - (ss_e_op_0)</p></td>
+<td><p>22 - (ts_e_p_3)</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td><p>23 - (ts_e_p_0)</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="simple">
+<dt>Joints have two properties m_boolean_type and f_boolean_type to guide the fabrication process:</dt><dd><ul class="simple">
+<li><p><strong>Default</strong> nothing = ‘0’</p></li>
+<li><p><strong>Plates</strong> edge_insertion = ‘1’</p></li>
+<li><p><strong>Plates</strong> hole = ‘2’,</p></li>
+<li><p><strong>Plates</strong> insert_between_multiple_edges = ‘3’</p></li>
+<li><p><strong>Beams</strong> slice = ‘4’ //project and make rectangle</p></li>
+<li><p><strong>Beams</strong> mill = ‘5’,</p></li>
+<li><p><strong>Beams</strong> mill_project = ‘6’ //project</p></li>
+<li><p><strong>Beams</strong> cut = ‘7’</p></li>
+<li><p><strong>Beams</strong> cut_project = ‘8’ //project</p></li>
+<li><p><strong>Beams</strong> binary_slice_mill = ‘9’ //project and make rectangle</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Joint: ss_e_op_1 Nejiri Arigata</strong></p>
+<figure class="figure align-default">
+<img alt="_images/joint_documentation_0.jpg" class="figure-img img-fluid" src="_images/joint_documentation_0.jpg" />
+</figure>
+<p><strong>Joint: ss_e_op_2 Dovetail</strong></p>
+<figure class="figure align-default">
+<img alt="_images/joint_documentation_1.jpg" class="figure-img img-fluid" src="_images/joint_documentation_1.jpg" />
+</figure>
+<p><strong>Joint: ss_e_ip_0 Dovetail</strong></p>
+<figure class="figure align-default">
+<img alt="_images/joint_documentation_2.jpg" class="figure-img img-fluid" src="_images/joint_documentation_2.jpg" />
+</figure>
+<p><strong>Joint: tenon mortise ts_e_p_2 (ts_e_p_0 - original) (start and end point of the joint line are skipped)</strong></p>
+<figure class="figure align-default">
+<img alt="_images/joint_documentation_3.jpg" class="figure-img img-fluid" src="_images/joint_documentation_3.jpg" />
+</figure>
+<p><strong>Joint: Annen joint - ts_e_p_3 (ts_e_p_2 - original)</strong></p>
+<figure class="figure align-default">
+<img alt="_images/joint_documentation_4.jpg" class="figure-img img-fluid" src="_images/joint_documentation_4.jpg" />
+</figure>
+<p><strong>Joint: cr_c_ip_0 cross</strong></p>
+<figure class="figure align-default">
+<img alt="_images/joint_documentation_5.jpg" class="figure-img img-fluid" src="_images/joint_documentation_5.jpg" />
+</figure>
+<p><strong>Joint: cr_c_ip_1 conic cross</strong></p>
+<figure class="figure align-default">
+<img alt="_images/joint_documentation_6.jpg" class="figure-img img-fluid" src="_images/joint_documentation_6.jpg" />
+</figure>
+<dl class="simple">
+<dt>To-do joints types:</dt><dd><ul class="simple">
+<li><p><input type="checkbox"> snap-fit joint</p></li>
+<li><p><input type="checkbox"> keys</p></li>
+<li><p><input type="checkbox"> tenon-mortise beams</p></li>
+<li><p><input type="checkbox"> tenon-mortise half beam</p></li>
+<li><p><input type="checkbox"> scarf</p></li>
+<li><p><input type="checkbox"> screws</p></li>
+</ul>
+</dd>
+<dt>To-do others:</dt><dd><ul class="simple">
+<li><p><input type="checkbox"> flipping case</p></li>
+<li><p><input type="checkbox">  BLT</p></li>
+</ul>
+</dd>
+<dt>Code implementation:</dt><dd><ul class="simple">
+<li><p><input checked=""  type="checkbox"> joint class that stores adjacency information</p></li>
+<li><p><input checked=""  type="checkbox"> change-basis transformation from unit tile to joint volume defined by two rectangles</p></li>
+<li><p><input checked=""  type="checkbox"> assignment of joints based and search categories and connection types</p></li>
+<li><p><input type="checkbox"> store each parameterized joint inside std::unordered_map&lt;string, joint&gt; that is not remapped yet</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="element">
+<h2>Element</h2>
+<dl class="simple">
+<dt>Code Implementation:</dt><dd><ul class="simple">
+<li><p>Element is specified as a pair of polylines, with planes for each side, in a beam case it is only a central polylines</p></li>
+<li><p><input checked=""  type="checkbox"> j_mf property track joints (joint id, male/female, parameter on edge)</p></li>
+<li><p><input type="checkbox"> mesh boolean: a) reference shapes, b) joints polygon pairs</p></li>
+</ul>
+</dd>
+<dt>Merge:</dt><dd><ul class="simple">
+<li><p>plate geometry can be merged, for beams boolean difference must be performed</p></li>
+<li><p><input checked=""  type="checkbox"> Insert face joints inside edge</p></li>
+<li><p><input checked=""  type="checkbox"> Insert between multiple edges (open polylines + closed polygons)</p></li>
+<li><p><input type="checkbox"> Cut projection and insert in polygon (case when side-side joints are rotated e.g. butterfly)</p></li>
+<li><p><input type="checkbox"> Mesh boolean: a) reference shapes, b) joints polygon pairs</p></li>
+</ul>
+</dd>
+</dl>
+<figure class="figure align-default">
+<img alt="_images/merge_1.jpg" class="figure-img img-fluid" src="_images/merge_1.jpg" />
+</figure>
+<dl class="simple">
+<dt>Grouping:</dt><dd><ul class="simple">
+<li><p><input type="checkbox"> Introduce unordered_map to track grouping like sorted lists x;x;x</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="search-methods">
+<h2>Search Methods</h2>
+<dl class="simple">
+<dt>Global:</dt><dd><ul class="simple">
+<li><p><input checked=""  type="checkbox"> Closest Object Query + OOB and ABB collision</p></li>
+<li><p><input checked=""  type="checkbox"> no search by user given index (must have input in the beginning)</p></li>
+<li><p><input checked=""  type="checkbox"> Polyline Search</p></li>
+</ul>
+</dd>
+<dt>Local:</dt><dd><ul class="simple">
+<li><p><input checked=""  type="checkbox"> face_to_face side-to-side parallel in-plane | <strong>joinery_library 1-9</strong> | type 12</p></li>
+<li><p><input checked=""  type="checkbox"> face_to_face side-to-side parallel out-of-plane | <strong>joinery_library 10-19</strong> | type 11</p></li>
+<li><p><input checked=""  type="checkbox"> face_to_face top-to-side | <strong>joinery_library 20-29</strong> | type 20</p></li>
+<li><p><input checked=""  type="checkbox"> plane_to_face cross | <strong>joinery_library 30-39</strong> | type 30</p></li>
+<li><p><input type="checkbox"> face_to_face top_to_top | <strong>joinery_library 40-49</strong> |  type 40  currently only output joint_area with 0 local search</p></li>
+<li><p><input type="checkbox"> face_to_face side-to-side | <strong>joinery_library non-parallel 50-59</strong> |  type 50</p></li>
+</ul>
+</dd>
+</dl>
+<table class="colwidths-auto table table-bordered docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>skip</strong></p></th>
+<th class="head"><p><strong>side-to-side</strong></p></th>
+<th class="head"><p><strong>side-to-side</strong></p></th>
+<th class="head"><p><strong>top-to-side</strong></p></th>
+<th class="head"><p><strong>cross</strong></p></th>
+<th class="head"><p><strong>top-to-top</strong></p></th>
+<th class="head"><p><strong>side-to-side</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td><p><strong>in-plane</strong></p></td>
+<td><p><strong>out-of-plane</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p><strong>rotated</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>11</p></td>
+<td><p>20</p></td>
+<td><p>30</p></td>
+<td><p>40</p></td>
+<td><p>50</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="simple">
+<dt>Local Search and Insertion Vector:</dt><dd><ul class="simple">
+<li><p>Description: a vector on an element edge that is equal to a plane normal on an edge.</p></li>
+<li><p><input checked=""  type="checkbox"> side-top connection insertion vector is currently defined by plane normals, not insertion direction because it is equal what is inside code</p></li>
+<li><p><input type="checkbox"> side-side connection, not finished for out of plane connections</p></li>
+<li><p><input type="checkbox"> side-side connection in rotaton insertion vector not tested</p></li>
+<li><p><input type="checkbox"> top-top connection</p></li>
+</ul>
+</dd>
+</dl>
+<figure class="figure align-default">
+<img alt="_images/insertion_vectors_0.jpg" class="figure-img img-fluid" src="_images/insertion_vectors_0.jpg" />
+</figure>
+<figure class="figure align-default">
+<img alt="_images/insertion_vectors_2.jpg" class="figure-img img-fluid" src="_images/insertion_vectors_2.jpg" />
+</figure>
+</section>
+<section id="presentation">
+<h2>Presentation</h2>
 <section id="element-is-a-list-of-joints">
-<h2>Element is a List of Joints</h2>
+<h3>Element is a List of Joints</h3>
 <figure class="figure align-default">
 <img alt="_images/Slide2.jpg" class="figure-img img-fluid" src="_images/Slide2.jpg" />
 </figure>
 </section>
 <section id="element-group">
-<h2>Element Group</h2>
+<h3>Element Group</h3>
 <figure class="figure align-default">
 <img alt="_images/Slide3.jpg" class="figure-img img-fluid" src="_images/Slide3.jpg" />
 </figure>
 </section>
 <section id="joint-tiles-undirected-graph-tile-female-male-cuts">
-<h2>Joint - Tiles + Undirected-graph. Tile = Female + Male Cuts</h2>
+<h3>Joint - Tiles + Undirected-graph. Tile = Female + Male Cuts</h3>
 <figure class="figure align-default">
 <img alt="_images/Slide4.jpg" class="figure-img img-fluid" src="_images/Slide4.jpg" />
 </figure>
 </section>
 <section id="search-connection-detection">
-<h2>Search - Connection Detection</h2>
+<h3>Search - Connection Detection</h3>
 <figure class="figure align-default">
 <img alt="_images/Slide5.jpg" class="figure-img img-fluid" src="_images/Slide5.jpg" />
 </figure>
@@ -134,19 +384,19 @@
 </figure>
 </section>
 <section id="tile-change-of-basis-transformation">
-<h2>Tile - Change-of-basis Transformation</h2>
+<h3>Tile - Change-of-basis Transformation</h3>
 <figure class="figure align-default">
 <img alt="_images/Slide6.jpg" class="figure-img img-fluid" src="_images/Slide6.jpg" />
 </figure>
 </section>
 <section id="boolean-methods-for-digital-cuts">
-<h2>Boolean Methods for Digital Cuts</h2>
+<h3>Boolean Methods for Digital Cuts</h3>
 <figure class="figure align-default">
 <img alt="_images/Slide7.jpg" class="figure-img img-fluid" src="_images/Slide7.jpg" />
 </figure>
 </section>
 <section id="side-to-side-topology">
-<h2>Side-to-side Topology</h2>
+<h3>Side-to-side Topology</h3>
 <figure class="figure align-default">
 <img alt="_images/Slide35.jpg" class="figure-img img-fluid" src="_images/Slide35.jpg" />
 </figure>
@@ -173,7 +423,7 @@
 </figure>
 </section>
 <section id="side-to-top-topology">
-<h2>Side-to-top Topology</h2>
+<h3>Side-to-top Topology</h3>
 <figure class="figure align-default">
 <img alt="_images/Slide41.jpg" class="figure-img img-fluid" src="_images/Slide41.jpg" />
 </figure>
@@ -236,7 +486,7 @@
 </figure>
 </section>
 <section id="cross-topology">
-<h2>Cross Topology</h2>
+<h3>Cross Topology</h3>
 <figure class="figure align-default">
 <img alt="_images/Slide16.jpg" class="figure-img img-fluid" src="_images/Slide16.jpg" />
 </figure>
@@ -257,7 +507,7 @@
 </figure>
 </section>
 <section id="mixed-topology">
-<h2>Mixed Topology</h2>
+<h3>Mixed Topology</h3>
 <figure class="figure align-default">
 <img alt="_images/Slide26.jpg" class="figure-img img-fluid" src="_images/Slide26.jpg" />
 </figure>
@@ -273,6 +523,7 @@
 <figure class="figure align-default">
 <img alt="_images/Slide46.jpg" class="figure-img img-fluid" src="_images/Slide46.jpg" />
 </figure>
+</section>
 </section>
 </section>
 
@@ -336,7 +587,12 @@
         
         <ul class="nav flex-column" id="compas-toc">
 <li class="nav-item"><a class="nav-link reference internal" href="#">Description</a><ul class="nav flex-column">
+<li class="nav-item"><a class="nav-link reference internal" href="#scope-pair-wise-connections">Scope - Pair-wise Connections</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="#algorithm-structure">Algorithm Structure</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#joint-types">Joint Types</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#element">Element</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#search-methods">Search Methods</a></li>
+<li class="nav-item"><a class="nav-link reference internal" href="#presentation">Presentation</a><ul class="nav flex-column">
 <li class="nav-item"><a class="nav-link reference internal" href="#element-is-a-list-of-joints">Element is a List of Joints</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="#element-group">Element Group</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="#joint-tiles-undirected-graph-tile-female-male-cuts">Joint - Tiles + Undirected-graph. Tile = Female + Male Cuts</a></li>
@@ -347,6 +603,8 @@
 <li class="nav-item"><a class="nav-link reference internal" href="#side-to-top-topology">Side-to-top Topology</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="#cross-topology">Cross Topology</a></li>
 <li class="nav-item"><a class="nav-link reference internal" href="#mixed-topology">Mixed Topology</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
