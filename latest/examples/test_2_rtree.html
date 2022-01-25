@@ -76,7 +76,7 @@
   <div class="container-fluid">
     <div class="row">
       <!-- main -->
-      <main class="col-12 col-md-9 col-xl-7 px-2 px-md-5 pt-2 pb-5 compas-content" role="main">
+      <main class="col-12 col-md-9 col-xl-7 px-4 px-md-5 pt-2 pb-5 compas-content" role="main">
         
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb mb-3 bg-white px-0">
@@ -106,7 +106,7 @@
 </figure>
 <div class="language-python notranslate"><div class="highlight"><pre><button class="btn copy"><i class="far fa-copy"></i></button><code><span></span><span class="c1"># compas_wood</span>
 <span class="kn">from</span> <span class="nn">compas_wood.joinery</span> <span class="kn">import</span> <span class="n">rtree</span>
-<span class="kn">import</span> <span class="nn">data_set</span>
+<span class="kn">import</span> <span class="nn">data_set_plates</span>
 
 <span class="c1"># viewer</span>
 <span class="kn">from</span> <span class="nn">compas_wood.viewer_helpers</span> <span class="kn">import</span> <span class="n">display</span>
@@ -119,7 +119,7 @@
 <span class="k">def</span> <span class="nf">test_rtree</span><span class="p">():</span>
 
     <span class="c1"># Get a list of polyline pairs</span>
-    <span class="nb">input</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">ss_24</span><span class="p">()</span>
+    <span class="nb">input</span> <span class="o">=</span> <span class="n">data_set_plates</span><span class="o">.</span><span class="n">ss_24</span><span class="p">()</span>
 
     <span class="c1"># Compute Rtree</span>
     <span class="n">neighbours</span><span class="p">,</span> <span class="n">boxes_AABB</span><span class="p">,</span> <span class="n">boxes_OOBB</span> <span class="o">=</span> <span class="n">rtree</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
@@ -323,7 +323,7 @@
       hljs.initHighlighting();
       anchors.add();
 
-      new ClipboardJS(".btn", {
+      new ClipboardJS(".btn.copy", {
         target: function(trigger) {
           return trigger.nextElementSibling;
         }

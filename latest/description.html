@@ -76,7 +76,7 @@
   <div class="container-fluid">
     <div class="row">
       <!-- main -->
-      <main class="col-12 col-md-9 col-xl-7 px-2 px-md-5 pt-2 pb-5 compas-content" role="main">
+      <main class="col-12 col-md-9 col-xl-7 px-4 px-md-5 pt-2 pb-5 compas-content" role="main">
         
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb mb-3 bg-white px-0">
@@ -115,6 +115,24 @@
 <li><p>{ 1000, 0.5, 1,  1000, 0.5, 10 ,  1000, 0.5, 20 ,  1000, 0.5, 30 ,  1000, 0.5, 40 ,  1000, 0.5, 50 }</p></li>
 </ul>
 </dd>
+<dt>Code implementation:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>how to a custom construct joint</dt><dd><ul>
+<li><p>string, name of a joint e.g. “ss_e_ip_0”</p></li>
+<li><p>std::vector&lt;CGAL_Polyline&gt; m[2] - 2 plines lists, where 1st list are bottom and 2nd are top plines</p></li>
+<li><p>std::vector&lt;CGAL_Polyline&gt; f[2] - 2 plines lists, where 1st list are bottom and 2nd are top plines</p></li>
+<li><p>std::vector&lt;char&gt; - list of boolean types for the “m” array, length matches m list length</p></li>
+<li><p>std::vector&lt;char&gt; - list of boolean types for the “f” array, length matches f list length</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><input checked=""  type="checkbox"> joint class that stores adjacency information</p></li>
+<li><p><input checked=""  type="checkbox"> change-basis transformation from unit tile to joint volume defined by two rectangles</p></li>
+<li><p><input checked=""  type="checkbox"> assignment of joints based and search categories and connection types</p></li>
+<li><p><input type="checkbox"> store each parameterized joint inside std::unordered_map&lt;string, joint&gt; that is not remapped yet</p></li>
+</ul>
+</dd>
 </dl>
 <p><strong>Joints in the Joint Library:</strong></p>
 <table class="colwidths-auto table table-bordered docutils align-default">
@@ -145,13 +163,13 @@
 <td></td>
 <td><p><strong>rotated</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>default</p></td>
-<td><p>default ss_e_ip_1</p></td>
-<td><p>default ss_e_op_1</p></td>
-<td><p>default ts_e_p_3</p></td>
-<td><p>default cr_c_ip_0</p></td>
-<td><p>default</p></td>
-<td><p>default</p></td>
+<tr class="row-even"><td></td>
+<td><p><strong>default</strong> ss_e_ip_1</p></td>
+<td><p><strong>default</strong> ss_e_op_1</p></td>
+<td><p><strong>default</strong> ts_e_p_3</p></td>
+<td><p><strong>default</strong> cr_c_ip_0</p></td>
+<td><p><strong>default</strong></p></td>
+<td><p><strong>default</strong></p></td>
 </tr>
 <tr class="row-odd"><td></td>
 <td><p>1 - (ss_e_ip_1)</p></td>
@@ -184,6 +202,14 @@
 <td></td>
 <td></td>
 <td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><strong>custom</strong> 9   ss_e_ip_9</p></td>
+<td><p><strong>custom</strong> 19   ss_e_op_9</p></td>
+<td><p><strong>custom</strong> 29   ts_e_p_9</p></td>
+<td><p><strong>custom</strong> 39   cr_c_ip_9</p></td>
+<td><p><strong>custom</strong> 49   tt_e_p_9</p></td>
+<td><p><strong>custom</strong> 59   ss_e_r_9</p></td>
 </tr>
 </tbody>
 </table>
@@ -243,13 +269,6 @@
 <dt>To-do others:</dt><dd><ul class="simple">
 <li><p><input type="checkbox"> flipping case</p></li>
 <li><p><input type="checkbox">  BLT</p></li>
-</ul>
-</dd>
-<dt>Code implementation:</dt><dd><ul class="simple">
-<li><p><input checked=""  type="checkbox"> joint class that stores adjacency information</p></li>
-<li><p><input checked=""  type="checkbox"> change-basis transformation from unit tile to joint volume defined by two rectangles</p></li>
-<li><p><input checked=""  type="checkbox"> assignment of joints based and search categories and connection types</p></li>
-<li><p><input type="checkbox"> store each parameterized joint inside std::unordered_map&lt;string, joint&gt; that is not remapped yet</p></li>
 </ul>
 </dd>
 </dl>
@@ -697,7 +716,7 @@
       hljs.initHighlighting();
       anchors.add();
 
-      new ClipboardJS(".btn", {
+      new ClipboardJS(".btn.copy", {
         target: function(trigger) {
           return trigger.nextElementSibling;
         }
