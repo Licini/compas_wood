@@ -119,17 +119,17 @@
 <span class="k">def</span> <span class="nf">test_connection_detection</span><span class="p">():</span>
 
     <span class="c1"># Input pairs of polylines</span>
-    <span class="nb">input</span> <span class="o">=</span> <span class="n">data_set_plates</span><span class="o">.</span><span class="n">c_9</span><span class="p">()</span>
+    <span class="nb">input</span> <span class="o">=</span> <span class="n">data_set_plates</span><span class="o">.</span><span class="n">c_0</span><span class="p">()</span>
 
     <span class="c1"># Generate connections</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">get_connection_zones</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">get_connection_zones</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
     <span class="n">result_flat_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">result</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
 
     <span class="c1"># Display via Compas_View2</span>
-    <span class="n">display</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">result_flat_list</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">result_flat_list</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
     <span class="c1"># output</span>
-    <span class="k">return</span> <span class="n">result</span>
+    <span class="c1"># return result</span>
 
 
 <span class="c1"># ==============================================================================</span>
@@ -170,6 +170,7 @@
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="test_4_get_connection_zones_ss_0.html">4_get_connection_zones ss_0</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="test_4_get_connection_zones_ss_24.html">4_get_connection_zones ss_24</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="test_4_get_connection_zones_ts_3.html">4_get_connection_zones ts_3</a></li>
+<li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="test_4_get_connection_zones_vda_2.html">4_get_connection_zones vda_2</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="test_5_closed_mesh_from_polylines.html">5_closed_mesh_from_polylines</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="test_6_closest_polylines.html">6_closest_polylines</a></li>
 <li class="toctree-l2 nav-item"><a class="nav-link reference internal" href="test_7_beam_volumes.html">7_beam_volumes</a></li>
