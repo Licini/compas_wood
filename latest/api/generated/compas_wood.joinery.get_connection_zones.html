@@ -97,7 +97,7 @@
 <h1>get_connection_zones</h1>
 <dl class="function">
 <dt id="compas_wood.joinery.get_connection_zones">
-<code class="sig-prename descclassname">compas_wood.joinery.</code><code class="sig-name descname">get_connection_zones</code><span class="sig-paren">(</span><em class="sig-param">polylines_vertices_XYZ</em>, <em class="sig-param">face_vectors_XYZ=None</em>, <em class="sig-param">face_joints_types_int=None</em>, <em class="sig-param">three_valance_element_indices_and_instruction=None</em>, <em class="sig-param">default_joint_parameters=None</em>, <em class="sig-param">search_type=2</em>, <em class="sig-param">division_distance=300</em>, <em class="sig-param">shift=0.6</em>, <em class="sig-param">output_type=4</em>, <em class="sig-param">triangulate=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/ibois-epfl/compas_wood/blob/master/src/compas_wood/joinery.py#L32"><span class="viewcode-link">[source]</span></a></dt>
+<code class="sig-prename descclassname">compas_wood.joinery.</code><code class="sig-name descname">get_connection_zones</code><span class="sig-paren">(</span><em class="sig-param">polylines_vertices_XYZ</em>, <em class="sig-param">face_vectors_XYZ=None</em>, <em class="sig-param">face_joints_types_int=None</em>, <em class="sig-param">three_valance_element_indices_and_instruction=None</em>, <em class="sig-param">adjacency=None</em>, <em class="sig-param">default_joint_parameters=None</em>, <em class="sig-param">search_type=2</em>, <em class="sig-param">division_distance=300</em>, <em class="sig-param">shift=0.6</em>, <em class="sig-param">output_type=4</em>, <em class="sig-param">triangulate=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/ibois-epfl/compas_wood/blob/master/src/compas_wood/joinery.py#L32"><span class="viewcode-link">[source]</span></a></dt>
 <dd><p>Compute joinery</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -106,6 +106,7 @@
 <li><p><strong>face_vectors_XYZ</strong> (<em>vectors to orient a joint</em>)</p></li>
 <li><p><strong>face_joints_types_int</strong> (<em>joint id, existing in the code</em>)</p></li>
 <li><p><strong>three_valance_element_indices_and_instruction</strong> (<em>special case e.g. alignment of rectangles</em>)</p></li>
+<li><p><strong>adjacency</strong> (<em>a list of plate id integer pairs</em>)</p></li>
 <li><p><strong>search_type</strong> (<em>0 - face-to-face, 1 - plane-to-face (cross), 2 - all</em>)</p></li>
 <li><p><strong>division_distance</strong> (<em>division parameter if tile allows this</em>)</p></li>
 <li><p><strong>shift</strong> (<em>distance value if tile allows this</em>)</p></li>

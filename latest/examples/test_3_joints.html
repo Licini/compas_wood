@@ -138,6 +138,7 @@
 <span class="kn">from</span> <span class="nn">compas_wood.joinery</span> <span class="kn">import</span> <span class="n">joints</span>
 <span class="kn">import</span> <span class="nn">data_set_plates</span>
 
+
 <span class="c1"># viewer</span>
 <span class="kn">from</span> <span class="nn">compas_wood.viewer_helpers</span> <span class="kn">import</span> <span class="n">display</span>
 
@@ -150,12 +151,14 @@
 
     <span class="c1"># Get a list of polyline pairs</span>
     <span class="nb">input</span> <span class="o">=</span> <span class="n">data_set_plates</span><span class="o">.</span><span class="n">c_15</span><span class="p">()</span>
+    <span class="c1"># input = data_set_plates_annen.annen_polylines()</span>
 
     <span class="c1"># Compute joint polylines</span>
     <span class="n">element_pairs_list</span><span class="p">,</span> <span class="n">joint_areas_polylines</span><span class="p">,</span> <span class="n">joint_types</span> <span class="o">=</span> <span class="n">joints</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
     <span class="c1"># print((len)(joint_areas_polylines))</span>
     <span class="c1"># print((len)(joint_types))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">element_pairs_list</span><span class="p">)</span>
+    <span class="c1"># print(element_pairs_list)</span>
 
     <span class="c1"># Display via Compas_View2</span>
     <span class="n">display</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">joint_areas_polylines</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">joint_types</span><span class="p">)</span>

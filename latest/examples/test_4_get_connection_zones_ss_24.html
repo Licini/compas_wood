@@ -104,8 +104,11 @@
 </figure>
 <div class="language-python notranslate"><div class="highlight"><pre><button class="btn copy"><i class="far fa-copy"></i></button><code><span></span><span class="c1"># compas_wood</span>
 <span class="kn">from</span> <span class="nn">compas_wood.joinery</span> <span class="kn">import</span> <span class="n">test</span>
-<span class="kn">from</span> <span class="nn">compas_wood.joinery</span> <span class="kn">import</span> <span class="n">get_connection_zones</span>
-<span class="kn">import</span> <span class="nn">data_set_plates</span>
+<span class="kn">from</span> <span class="nn">compas_wood.joinery</span> <span class="kn">import</span> <span class="n">get_connection_zones</span><span class="p">,</span> <span class="n">closed_mesh_from_polylines</span>
+
+<span class="c1"># import data_set_plates</span>
+<span class="c1"># import data_set_plates_annen</span>
+<span class="kn">import</span> <span class="nn">data_set_custom</span>
 
 <span class="c1"># viewer</span>
 <span class="kn">from</span> <span class="nn">compas_wood.viewer_helpers</span> <span class="kn">import</span> <span class="n">display</span>
@@ -118,17 +121,92 @@
 <span class="k">def</span> <span class="nf">test_connection_detection</span><span class="p">():</span>
 
     <span class="c1"># Generate connections</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    result = get_connection_zones(</span>
+<span class="sd">        data_set_plates.annen_small_polylines(),</span>
+<span class="sd">        data_set_plates.annen_small_edge_directions(),</span>
+<span class="sd">        data_set_plates.annen_small_edge_joints(),</span>
+<span class="sd">        data_set_plates.annen_small_three_valance_element_indices_and_instruction(),</span>
+<span class="sd">    )</span>
+
+<span class="sd">    polylines_vertices_XYZ,</span>
+<span class="sd">    face_vectors_XYZ=None,</span>
+<span class="sd">    face_joints_types_int=None,</span>
+<span class="sd">    three_valance_element_indices_and_instruction=None,</span>
+<span class="sd">    default_joint_parameters=None,</span>
+<span class="sd">    search_type=2,</span>
+<span class="sd">    division_distance=300,</span>
+<span class="sd">    shift=0.6,</span>
+<span class="sd">    output_type=4,</span>
+<span class="sd">    triangulate=0,4</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">division_length</span> <span class="o">=</span> <span class="mi">300</span>
+    <span class="n">joint_parameters</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">division_length</span><span class="p">,</span>
+        <span class="mf">0.5</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">,</span>
+        <span class="n">division_length</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">,</span>
+        <span class="mf">0.65</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">,</span>
+        <span class="n">division_length</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">,</span>
+        <span class="mf">0.5</span><span class="p">,</span>
+        <span class="mi">21</span><span class="p">,</span>
+        <span class="n">division_length</span><span class="p">,</span>
+        <span class="mf">0.5</span><span class="p">,</span>
+        <span class="mi">30</span><span class="p">,</span>
+        <span class="n">division_length</span><span class="p">,</span>
+        <span class="mf">0.5</span><span class="p">,</span>
+        <span class="mi">40</span><span class="p">,</span>
+        <span class="n">division_length</span><span class="p">,</span>
+        <span class="mf">0.5</span><span class="p">,</span>
+        <span class="mi">15</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="c1"># division_length * 1.5,</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">get_connection_zones</span><span class="p">(</span>
-        <span class="n">data_set_plates</span><span class="o">.</span><span class="n">annen_small_polylines</span><span class="p">(),</span>
-        <span class="n">data_set_plates</span><span class="o">.</span><span class="n">annen_small_edge_directions</span><span class="p">(),</span>
-        <span class="n">data_set_plates</span><span class="o">.</span><span class="n">annen_small_edge_joints</span><span class="p">(),</span>
-        <span class="n">data_set_plates</span><span class="o">.</span><span class="n">annen_small_three_valance_element_indices_and_instruction</span><span class="p">(),</span>
+        <span class="n">data_set_custom</span><span class="o">.</span><span class="n">polylines</span><span class="p">(),</span>
+        <span class="n">data_set_custom</span><span class="o">.</span><span class="n">insertion_vectors</span><span class="p">(),</span>
+        <span class="n">data_set_custom</span><span class="o">.</span><span class="n">joints_per_face</span><span class="p">(),</span>
+        <span class="n">data_set_custom</span><span class="o">.</span><span class="n">three_valence</span><span class="p">(),</span>
+        <span class="n">data_set_custom</span><span class="o">.</span><span class="n">adjacency</span><span class="p">(),</span>
+        <span class="n">joint_parameters</span><span class="p">,</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="mi">10000</span><span class="p">,</span>
+        <span class="mf">0.6</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">,</span>
     <span class="p">)</span>
 
+    <span class="c1"># Mesh Polylines</span>
+    <span class="n">meshes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">result_flat_list2</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)):</span>
+        <span class="n">mesh_result</span> <span class="o">=</span> <span class="n">closed_mesh_from_polylines</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">mesh_result</span><span class="o">.</span><span class="n">vertices</span><span class="p">()))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># mesh_result.is_valid() == False or</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            print(&quot;Mesh Is not Valid&quot; + (str)(count))</span>
+<span class="sd">            for j in result[i]:</span>
+<span class="sd">                print(&quot;x&quot;)</span>
+<span class="sd">                for k in j:</span>
+<span class="sd">                    print(k)</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+
+            <span class="n">result_flat_list2</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not Valid Mesh&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">meshes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mesh_result</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1"># if len(meshes) &gt; 100:</span>
+        <span class="c1">#    break</span>
+
+    <span class="c1"># data_set_plates_annen.annen_three_valance_element_indices_and_instruction(),</span>
     <span class="n">result_flat_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">result</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">]</span>
 
     <span class="c1"># Display via Compas_View2</span>
-    <span class="n">display</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">result_flat_list</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">result_flat_list</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
     <span class="c1"># output</span>
     <span class="k">return</span> <span class="n">result</span>
