@@ -128,18 +128,8 @@
 <span class="sd">        data_set_plates.annen_small_edge_joints(),</span>
 <span class="sd">        data_set_plates.annen_small_three_valance_element_indices_and_instruction(),</span>
 <span class="sd">    )</span>
-
-<span class="sd">    polylines_vertices_XYZ,</span>
-<span class="sd">    face_vectors_XYZ=None,</span>
-<span class="sd">    face_joints_types_int=None,</span>
-<span class="sd">    three_valance_element_indices_and_instruction=None,</span>
-<span class="sd">    default_joint_parameters=None,</span>
-<span class="sd">    search_type=2,</span>
-<span class="sd">    division_distance=300,</span>
-<span class="sd">    shift=0.6,</span>
-<span class="sd">    output_type=4,</span>
-<span class="sd">    triangulate=0,4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">division_length</span> <span class="o">=</span> <span class="mi">300</span>
     <span class="n">joint_parameters</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">division_length</span><span class="p">,</span>
@@ -185,14 +175,6 @@
         <span class="n">mesh_result</span> <span class="o">=</span> <span class="n">closed_mesh_from_polylines</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">mesh_result</span><span class="o">.</span><span class="n">vertices</span><span class="p">()))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># mesh_result.is_valid() == False or</span>
-            <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">            print(&quot;Mesh Is not Valid&quot; + (str)(count))</span>
-<span class="sd">            for j in result[i]:</span>
-<span class="sd">                print(&quot;x&quot;)</span>
-<span class="sd">                for k in j:</span>
-<span class="sd">                    print(k)</span>
-<span class="sd">            &quot;&quot;&quot;</span>
-
             <span class="n">result_flat_list2</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not Valid Mesh&quot;</span><span class="p">)</span>
             <span class="k">break</span>
