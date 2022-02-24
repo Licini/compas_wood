@@ -172,7 +172,6 @@
 <img alt="../_images/closed_mesh_from_polylines_c_16.jpg" class="figure-img img-fluid" src="../_images/closed_mesh_from_polylines_c_16.jpg" />
 </figure>
 <div class="language-python notranslate"><div class="highlight"><pre><button class="btn copy"><i class="far fa-copy"></i></button><code><span></span><span class="c1"># compas_wood</span>
-<span class="kn">from</span> <span class="nn">compas_wood.joinery</span> <span class="kn">import</span> <span class="n">test</span>
 <span class="kn">from</span> <span class="nn">compas_wood.joinery</span> <span class="kn">import</span> <span class="n">get_connection_zones</span>
 <span class="kn">from</span> <span class="nn">compas_wood.joinery</span> <span class="kn">import</span> <span class="n">closed_mesh_from_polylines</span>
 <span class="kn">import</span> <span class="nn">data_set_plates</span>
@@ -180,42 +179,51 @@
 <span class="c1"># viewer</span>
 <span class="kn">from</span> <span class="nn">compas_wood.viewer_helpers</span> <span class="kn">import</span> <span class="n">display</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cls&quot;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;nt&quot;</span> <span class="k">else</span> <span class="s2">&quot;clear&quot;</span><span class="p">)</span>
-
 <span class="c1"># ==============================================================================</span>
-<span class="c1"># Create a list of polyline pairs - input, then generate joints and display them</span>
+<span class="c1"># Create joints and mesh them</span>
 <span class="c1"># ==============================================================================</span>
 
 
 <span class="k">def</span> <span class="nf">test_connection_detection</span><span class="p">():</span>
 
-    <span class="c1"># Generate connections</span>
-    <span class="c1"># result = get_connection_zones(c_15())</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">get_connection_zones</span><span class="p">(</span><span class="n">data_set_plates</span><span class="o">.</span><span class="n">ss_0</span><span class="p">())</span>
+    <span class="c1"># Parameters</span>
+    <span class="n">division_length</span> <span class="o">=</span> <span class="mi">300</span>
+    <span class="n">joint_parameters</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">division_length</span><span class="p">,</span>
+        <span class="mf">0.5</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">,</span>
+        <span class="n">division_length</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">,</span>
+        <span class="mf">0.65</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">,</span>
+        <span class="n">division_length</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">,</span>
+        <span class="mf">0.5</span><span class="p">,</span>
+        <span class="mi">21</span><span class="p">,</span>
+        <span class="n">division_length</span><span class="p">,</span>
+        <span class="mf">0.95</span><span class="p">,</span>
+        <span class="mi">30</span><span class="p">,</span>
+        <span class="n">division_length</span><span class="p">,</span>
+        <span class="mf">0.95</span><span class="p">,</span>
+        <span class="mi">40</span><span class="p">,</span>
+        <span class="n">division_length</span><span class="p">,</span>
+        <span class="mf">0.95</span><span class="p">,</span>
+        <span class="mi">50</span><span class="p">,</span>
+    <span class="p">]</span>
 
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    result = get_connection_zones(</span>
-<span class="sd">    annen_small_polylines(),</span>
-<span class="sd">    annen_small_edge_directions(),</span>
-<span class="sd">    annen_small_edge_joints(),</span>
-<span class="sd">    annen_small_three_valance_element_indices_and_instruction()</span>
-<span class="sd">    )</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Generate connections</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">get_connection_zones</span><span class="p">(</span>
+        <span class="n">data_set_plates</span><span class="o">.</span><span class="n">annen_small_polylines</span><span class="p">(),</span>
+        <span class="n">data_set_plates</span><span class="o">.</span><span class="n">annen_small_edge_directions</span><span class="p">(),</span>
+        <span class="n">data_set_plates</span><span class="o">.</span><span class="n">annen_small_edge_joints</span><span class="p">(),</span>
+        <span class="n">data_set_plates</span><span class="o">.</span><span class="n">annen_small_three_valance_element_indices_and_instruction</span><span class="p">(),</span>
+        <span class="kc">None</span><span class="p">,</span>
+        <span class="n">joint_parameters</span><span class="p">,</span>
+    <span class="p">)</span>
 
     <span class="c1"># Mesh Polylines</span>
     <span class="n">meshes</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)):</span>
         <span class="n">mesh_result</span> <span class="o">=</span> <span class="n">closed_mesh_from_polylines</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
         <span class="n">meshes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mesh_result</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mesh&quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nb">str</span><span class="p">)(</span><span class="n">count</span><span class="p">))</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="c1"># meshes = [closed_mesh_from_polylines(result[21])]</span>
 
     <span class="c1"># Display via Compas_View2</span>
     <span class="n">display</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">meshes</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -227,7 +235,6 @@
 <span class="c1"># ==============================================================================</span>
 <span class="c1"># call the compas_wood methods</span>
 <span class="c1"># ==============================================================================</span>
-<span class="n">test</span><span class="p">()</span>
 <span class="n">test_connection_detection</span><span class="p">()</span>
 </code></pre></div>
 </div>

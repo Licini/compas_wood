@@ -112,11 +112,11 @@
 <span class="kn">from</span> <span class="nn">compas_wood.viewer_helpers</span> <span class="kn">import</span> <span class="n">display</span>
 
 <span class="c1"># ==============================================================================</span>
-<span class="c1"># Create a list of polyline pairs - input, then generate joints and display them</span>
+<span class="c1"># Get Adjancency between Elements using RTree Search</span>
 <span class="c1"># ==============================================================================</span>
 
 
-<span class="k">def</span> <span class="nf">test_rtree</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">test_rtree</span><span class="p">(</span><span class="n">boxes_AABB_or_boxes_OOBB</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
     <span class="c1"># Get a list of polyline pairs</span>
     <span class="nb">input</span> <span class="o">=</span> <span class="n">data_set_plates</span><span class="o">.</span><span class="n">ss_24</span><span class="p">()</span>
@@ -124,24 +124,18 @@
     <span class="c1"># Compute Rtree</span>
     <span class="n">neighbours</span><span class="p">,</span> <span class="n">boxes_AABB</span><span class="p">,</span> <span class="n">boxes_OOBB</span> <span class="o">=</span> <span class="n">rtree</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
 
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    selected_id = 22</span>
-<span class="sd">    boxes_selected = []</span>
-<span class="sd">    boxes_AABB_or_boxes_OOBB = False</span>
-<span class="sd">    if(boxes_AABB_or_boxes_OOBB):</span>
-<span class="sd">        boxes_selected.append(boxes_OOBB[selected_id])</span>
-<span class="sd">        for i in neighbours[selected_id]:</span>
-<span class="sd">            for j in i :</span>
-<span class="sd">                boxes_selected.append(boxes_OOBB[j])</span>
-<span class="sd">    else :</span>
-<span class="sd">        boxes_selected.append(boxes_AABB[selected_id])</span>
-<span class="sd">        for i in neighbours[selected_id]:</span>
-<span class="sd">            for j in i :</span>
-<span class="sd">                boxes_selected.append(boxes_AABB[j])</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># get aabb or oobb boxes</span>
+    <span class="n">selected_id</span> <span class="o">=</span> <span class="mi">22</span>
+    <span class="n">boxes_selected</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">boxes</span> <span class="o">=</span> <span class="n">boxes_AABB</span> <span class="k">if</span> <span class="n">boxes_AABB_or_boxes_OOBB</span> <span class="k">else</span> <span class="n">boxes_OOBB</span>
+
+    <span class="c1"># get first and its neighbors</span>
+    <span class="n">boxes_selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">boxes</span><span class="p">[</span><span class="n">selected_id</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">neighbours</span><span class="p">[</span><span class="n">selected_id</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">boxes_selected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">boxes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
     <span class="c1"># Display via Compas_View2</span>
-    <span class="n">display</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">boxes_AABB</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">boxes_selected</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># output</span>
     <span class="k">return</span> <span class="n">neighbours</span>
@@ -150,7 +144,7 @@
 <span class="c1"># ==============================================================================</span>
 <span class="c1"># call the compas_wood methods</span>
 <span class="c1"># ==============================================================================</span>
-<span class="n">test_rtree</span><span class="p">()</span>
+<span class="n">test_rtree</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </section>
